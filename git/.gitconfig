@@ -1,0 +1,23 @@
+[user]
+    name  = Tom Eloe
+    email = tomeloe@gmail.com
+    
+[core]
+  editor = "nvim"
+
+[github]
+    user = teloe
+
+[alias]
+    a       = add
+    br      = branch
+    st      = status
+    ci      = commit
+    p       = push
+    cl      = clone
+	co      = checkout
+    cob     = checkout -b
+    unstage = reset HEAD --
+	lg      = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lp      = log --pretty=oneline
+	last    = log -1 HEAD
