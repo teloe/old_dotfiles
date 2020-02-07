@@ -34,6 +34,9 @@ alias f='open -a Finder '
 alias fc='open -a Finder .'
 alias slack="open -a '/Applications/Slack.app'"
 
+# Auto Suggestions
+bindkey '^ ' autosuggest-accept
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
