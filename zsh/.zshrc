@@ -25,7 +25,6 @@ alias vu="vagrant up"
 alias vssh="vagrant ssh"
 alias vh="vagrant halt"
 alias v="nvim"
-alias tmux='tmux -2'
 
 # Desktop Programs
 alias chrome="open -a google\ chrome"
