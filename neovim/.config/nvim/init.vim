@@ -80,6 +80,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Vertical resize current buffer by 10 
+nnoremap vl :vertical resize +10<CR>
+
 " Clear search
 map <silent> <esc> :noh<cr>
 
