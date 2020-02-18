@@ -61,8 +61,8 @@ exe "hi Type "            .Peach
 exe "hi TypeDef "         .Snow
 
 " Custom options
-hi! Pmenu ctermbg=gray guibg=#303030
-" hi! PmenuSel guibg=#191919
+hi! Pmenu ctermbg=gray guibg=#282828
+" hi! PmenuSel guibg=#060086
 hi! Folded guifg=#666666 guibg=NONE
 hi! SignColumn guibg=NONE
 hi! Visual guibg=#333333 guifg=NONE gui=NONE

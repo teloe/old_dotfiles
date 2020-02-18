@@ -81,7 +81,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Vertical resize current buffer by 10 
-nnoremap vl :vertical resize +10<CR>
+nnoremap <right> :vertical resize +10<CR>
+nnoremap <left> :vertical resize -10<CR>
 
 " Clear search
 map <silent> <esc> :noh<cr>
@@ -321,7 +322,6 @@ set background=dark
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colo primetime
-" colo ahe 
 " colo ambient 
 
 " Transparent backgrounds
