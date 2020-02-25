@@ -20,6 +20,8 @@ SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_EXEC_TIME_SHOW=false
 
 # Aliases
+alias c="clear"
+alias cl="clear"
 alias cls="clear"
 alias vu="vagrant up"
 alias vssh="vagrant ssh"

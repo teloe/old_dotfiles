@@ -1,7 +1,4 @@
-" Maintainer:	Simon Descarpentries <simon/\d12s.fr>
-" Licence: GPLv3
-" Commant: Good code from mango.vim, good colors inspired by mustang.vim, in good
-" readability inspired by monochrome.vim
+" Modified version of vim primaries, https://vimcolors.com/688/primaries/dark 
 
 set background=dark
 
@@ -11,7 +8,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "primaries"
+let colors_name = "primetime"
 
 let Orange	  = "guifg=#ff9800 guibg=NONE gui=none ctermfg=203 ctermbg=none cterm=none"
 let Lemon	  = "guifg=#ffd787 guibg=NONE gui=none ctermfg=220 ctermbg=none cterm=none"
@@ -61,11 +58,10 @@ exe "hi Type "            .Peach
 exe "hi TypeDef "         .Snow
 
 " Custom options
-hi! Pmenu ctermbg=gray guibg=#282828
-" hi! PmenuSel guibg=#060086
+hi! Pmenu ctermbg=gray guibg=#333333
 hi! Folded guifg=#666666 guibg=NONE
 hi! SignColumn guibg=NONE
-hi! Visual guibg=#333333 guifg=NONE gui=NONE
+hi! Visual guibg=#373b41 guifg=NONE gui=NONE
 
 " cursorline
 hi cursorline cterm=none ctermbg=236 ctermfg=none guibg=grey20 guifg=NONE

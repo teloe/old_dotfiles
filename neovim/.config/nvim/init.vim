@@ -278,10 +278,7 @@ let NERDTreeNodeDelimiter = "\x07"
 
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
-
 let g:airline_theme='hybrid'
-" let g:airline_theme='base16'
-" let g:airline_theme='dark_minimal'
 
 let g:webdevicons_enable_airline_statusline = 1
 if !exists('g:airline_symbols')
