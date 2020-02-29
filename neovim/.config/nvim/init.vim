@@ -23,6 +23,9 @@ noremap <Leader>s :update<CR>
 " Use Vim defaults
 set nocompatible
 
+" Keep undo history when switching buffers
+set hidden
+
 set path+=**
 set fo+=t
 set linebreak
@@ -319,7 +322,7 @@ set background=dark
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colo primetime
-" colo ambient 
+" colo ocean
 
 " Transparent backgrounds
 hi! Normal ctermbg=NONE guibg=NONE
@@ -357,7 +360,7 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 let g:user_emmet_settings = {
 \   'html' : {
 \       'indentation' : '    ',
-\       'inline_elements': 'h1,h2,h3,h4,h5,h6,p,a,span,blockquote,strong,em',
+\       'inline_elements': 'h1,h2,h3,h4,h5,h6,p,a,span,blockquote,strong,em,li',
 \       'indent_blockelement': 1,
 \   },
 \   'php' : {
