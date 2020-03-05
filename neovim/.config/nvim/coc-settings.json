@@ -1,5 +1,5 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["json", "Markdown"],
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "json", "Markdown"],
     "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
     "diagnostic.errorSign": "•",
     "diagnostic.warningSign": "•",

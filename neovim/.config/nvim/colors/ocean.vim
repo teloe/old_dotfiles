@@ -23,8 +23,8 @@ let s:gui03        = "65737e"
 let g:base16_gui03 = "65737e"
 let s:gui04        = "a7adba"
 let g:base16_gui04 = "a7adba"
-let s:gui05        = "c0c5ce"
-let g:base16_gui05 = "c0c5ce"
+let s:gui05        = "ffffff"
+let g:base16_gui05 = "ffffff"
 let s:gui06        = "dfe1e8"
 let g:base16_gui06 = "dfe1e8"
 let s:gui07        = "ffffff"
@@ -184,8 +184,8 @@ call <sid>hi("Directory",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Error",         s:gui00, s:gui08, s:cterm00, s:cterm08, "", "")
 call <sid>hi("ErrorMsg",      s:gui08, s:gui00, s:cterm08, s:cterm00, "", "")
 call <sid>hi("Exception",     s:gui07, "", s:cterm07, "", "", "")
-call <sid>hi("FoldColumn",    s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
-call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
+call <sid>hi("FoldColumn",    s:gui0C, "none", s:cterm0C, "none", "", "")
+call <sid>hi("Folded",        s:gui03, "none", s:cterm03, "none", "", "")
 call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none", "")
 call <sid>hi("Italic",        "", "", "", "", "none", "")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
