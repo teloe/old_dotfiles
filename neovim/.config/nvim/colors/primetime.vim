@@ -18,7 +18,8 @@ let Prunus	  = "guifg=#af87ff guibg=NONE gui=none ctermfg=63 ctermbg=none cterm=
 let Snow	  = "guifg=#ffffff guibg=NONE gui=none ctermfg=255 ctermbg=none cterm=BOLD"
 let White	  = "guifg=#ffffff guibg=NONE gui=none ctermfg=255 ctermbg=none cterm=none"
 let Concrete  = "guifg=#888888 guibg=NONE gui=none ctermfg=246 ctermbg=none cterm=none"
-let Anthracite= "guifg=#666666 guibg=NONE gui=none ctermfg=242 ctermbg=none cterm=none"
+" let Anthracite= "guifg=#666666 guibg=NONE gui=none ctermfg=242 ctermbg=none cterm=none"
+let Anthracite= "guifg=#a6a6a6 guibg=NONE gui=none ctermfg=242 ctermbg=none cterm=none"
 
 exe "hi Boolean "         .Lemon
 exe "hi Constant "        .Peach
@@ -59,7 +60,8 @@ exe "hi TypeDef "         .Snow
 
 " Custom options
 hi! Pmenu ctermbg=gray guibg=#333333
-hi! Folded guifg=#666666 guibg=NONE
+" hi! Folded guifg=#666666 guibg=NONE
+hi! Folded guifg=#a6a6a6 guibg=NONE
 hi! SignColumn guibg=NONE
 hi! Visual guibg=#373b41 guifg=NONE gui=NONE
 
