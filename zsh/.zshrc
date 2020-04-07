@@ -27,6 +27,7 @@ alias vu="vagrant up"
 alias vssh="vagrant ssh"
 alias vh="vagrant halt"
 alias v="nvim"
+alias s="npm start"
 
 # Desktop Programs
 alias chrome="open -a google\ chrome"
@@ -127,5 +128,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
   # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+  # autoload -U promptinit; promptinit
+  # prompt spaceship

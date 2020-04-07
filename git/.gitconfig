@@ -9,14 +9,15 @@
     user = teloe
 
 [alias]
+    s       = status
     a       = add
-    br      = branch
-    st      = status
-    ci      = commit
+    c       = commit
+    cm      = commit -m
     p       = push
-    cl      = clone
+    br      = branch
 	co      = checkout
     cob     = checkout -b
+    cl      = clone
     unstage = reset HEAD --
 	lg      = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lp      = log --pretty=oneline

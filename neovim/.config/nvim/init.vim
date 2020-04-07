@@ -83,6 +83,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Vertical split
+nnoremap vs :vsplit
+
 " Vertical resize current buffer by 10 
 nnoremap <right> :vertical resize +10<CR>
 nnoremap <left> :vertical resize -10<CR>
@@ -200,7 +203,7 @@ call denite#custom#var('file/rec', 'command',
 " call denite#custom#var('grep', 'separator', ['--'])
 " call denite#custom#var('grep', 'final_opts', [])
 
-" For ag
+" For ag (silver searcher)
 call denite#custom#var('file/rec', 'command',
 \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
@@ -277,7 +280,7 @@ let NERDTreeNodeDelimiter = "\x07"
 
 " }}}
 
-" Airline ---------------------------------------------- {{{
+ " Airline ---------------------------------------------- {{{
 
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
@@ -321,21 +324,25 @@ syntax on
 set background=dark
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colo primetime
-" colo ocean
+colo ocean
 
 " Transparent backgrounds
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr ctermfg=NONE guibg=NONE
-hi! SignifySignAdd guibg=NONE
-hi! SignifySignDelete guibg=NONE
-hi! SignifySignChange guibg=NONE
-" hi! Visual  guifg=NONE guibg=#4f5b66 gui=NONE
-
+hi! Comment gui=NONE
+hi! Folded guibg=NONE gui=NONE
+" hi! SignColumn guibg=NONE
+hi! DiffChange guibg=NONE
+hi! DiffAdd guibg=NONE
+hi! DiffDelete guibg=NONE
+" hi! Visual guifg=NONE guibg=#373b41
 " }}}
 
 " Misc ------------------------------------------------- {{{
+
+" Vim repeat
+call dein#add('tpope/vim-repeat')
 
 " Auto-close plugin
 call dein#add('rstacruz/vim-closer')

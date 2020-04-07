@@ -1,9 +1,6 @@
 " Minimal version of Chris Kempson's base16-ocean theme, 
 " https://github.com/chriskempson/base16-vim/blob/master/colors/base16-ocean.vim. 
-" Many colors have been replaced with whites.
-" Inspired by Mike Engel's vs code theme, simple-ocean. 
-" https://marketplace.visualstudio.com/items?itemName=beardfury.simple-ocean
-"
+
 " vi:syntax=vim
 
 if !has("gui_running")
@@ -13,22 +10,25 @@ if !has("gui_running")
 endif
 
 " GUI color definitions
-let s:gui00        = "2b303b"
-let g:base16_gui00 = "2b303b"
-let s:gui01        = "343d46"
-let g:base16_gui01 = "343d46"
-let s:gui02        = "4f5b66"
+" let s:gui00        = "2b303b" " blue bg
+let s:gui00        = "262626" " black bg
+" let g:base16_gui00 = "2b303b"
+let g:base16_gui00 = "262626"
+let s:gui01        = "282c34"
+let g:base16_gui01 = "282c34"
+" let s:gui02        = "4f5b66"
+let s:gui02        = "373b41"
 let g:base16_gui02 = "4f5b66"
 let s:gui03        = "65737e"
 let g:base16_gui03 = "65737e"
 let s:gui04        = "a7adba"
 let g:base16_gui04 = "a7adba"
-let s:gui05        = "ffffff"
-let g:base16_gui05 = "ffffff"
+let s:gui05        = "c0c5ce"
+let g:base16_gui05 = "c0c5ce"
 let s:gui06        = "dfe1e8"
 let g:base16_gui06 = "dfe1e8"
-let s:gui07        = "ffffff"
-let g:base16_gui07 = "ffffff"
+let s:gui07        = "eff1f5"
+let g:base16_gui07 = "eff1f5"
 let s:gui08        = "bf616a"
 let g:base16_gui08 = "bf616a"
 let s:gui09        = "d08770"
@@ -43,8 +43,8 @@ let s:gui0D        = "8fa1b3"
 let g:base16_gui0D = "8fa1b3"
 let s:gui0E        = "b48ead"
 let g:base16_gui0E = "b48ead"
-let s:gui0F        = "ffffff"
-let g:base16_gui0F = "ffffff"
+let s:gui0F        = "eff1f5"
+let g:base16_gui0F = "eff1f5"
 
 " Terminal color definitions
 let s:cterm00        = "00"
@@ -177,13 +177,13 @@ fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
 endfun
 
 " Vim editor colors
-call <sid>hi("Normal",        s:gui07, s:gui00, s:cterm07, s:cterm00, "", "")
+call <sid>hi("Normal",        s:gui06, s:gui00, s:cterm06, s:cterm00, "", "")
 call <sid>hi("Bold",          "", "", "", "", "bold", "")
 call <sid>hi("Debug",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Directory",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Error",         s:gui00, s:gui08, s:cterm00, s:cterm08, "", "")
 call <sid>hi("ErrorMsg",      s:gui08, s:gui00, s:cterm08, s:cterm00, "", "")
-call <sid>hi("Exception",     s:gui07, "", s:cterm07, "", "", "")
+call <sid>hi("Exception",     s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("FoldColumn",    s:gui0C, "none", s:cterm0C, "none", "", "")
 call <sid>hi("Folded",        s:gui03, "none", s:cterm03, "none", "", "")
 call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none", "")
@@ -223,32 +223,32 @@ call <sid>hi("TabLineFill",   s:gui03, s:gui01, s:cterm03, s:cterm01, "none", ""
 call <sid>hi("TabLineSel",    s:gui0B, s:gui01, s:cterm0B, s:cterm01, "none", "")
 
 " Standard syntax highlighting
-call <sid>hi("Boolean",      s:gui07, "", s:cterm07, "", "", "")
+call <sid>hi("Boolean",      s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Character",    s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("Comment",      s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("Conditional",  s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("Constant",     s:gui07, "", s:cterm07, "", "", "")
+call <sid>hi("Constant",     s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Define",       s:gui0E, "", s:cterm0E, "", "none", "")
 call <sid>hi("Delimiter",    s:gui0F, "", s:cterm0F, "", "", "")
 call <sid>hi("Float",        s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("Function",     s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Identifier",   s:gui07, "", s:cterm07, "", "none", "")
+call <sid>hi("Identifier",   s:gui06, "", s:cterm06, "", "none", "")
 call <sid>hi("Include",      s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Keyword",      s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("Label",        s:gui06, "", s:cterm06, "", "", "")
-call <sid>hi("Number",       s:gui07, "", s:cterm07, "", "", "")
-call <sid>hi("Operator",     s:gui07, "", s:cterm07, "", "none", "")
+call <sid>hi("Number",       s:gui06, "", s:cterm06, "", "", "")
+call <sid>hi("Operator",     s:gui06, "", s:cterm06, "", "none", "")
 call <sid>hi("PreProc",      s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Repeat",       s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Special",      s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("SpecialChar",  s:gui0F, "", s:cterm0F, "", "", "")
-call <sid>hi("Statement",    s:gui07, "", s:cterm07, "", "", "")
+call <sid>hi("Statement",    s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("StorageClass", s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("String",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Structure",    s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("Tag",          s:gui07, "", s:cterm07, "", "", "")
+call <sid>hi("Tag",          s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Todo",         s:gui06, s:gui01, s:cterm06, s:cterm01, "", "")
-call <sid>hi("Type",         s:gui07, "", s:cterm07, "", "none", "")
+call <sid>hi("Type",         s:gui06, "", s:cterm06, "", "none", "")
 call <sid>hi("Typedef",      s:gui06, "", s:cterm06, "", "", "")
 
 " C highlighting
@@ -270,10 +270,10 @@ call <sid>hi("cssClassName",   s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("cssColor",       s:gui0C, "", s:cterm0C, "", "", "")
 
 " Diff highlighting
-call <sid>hi("DiffAdd",      s:gui0B, s:gui01,  s:cterm0B, s:cterm01, "", "")
-call <sid>hi("DiffChange",   s:gui03, s:gui01,  s:cterm03, s:cterm01, "", "")
-call <sid>hi("DiffDelete",   s:gui08, s:gui01,  s:cterm08, s:cterm01, "", "")
-call <sid>hi("DiffText",     s:gui0D, s:gui01,  s:cterm0D, s:cterm01, "", "")
+call <sid>hi("DiffAdd",      s:gui0B, s:gui00,  s:cterm0B, s:cterm00, "", "")
+call <sid>hi("DiffChange",   s:gui03, s:gui00,  s:cterm03, s:cterm00, "", "")
+call <sid>hi("DiffDelete",   s:gui08, s:gui00,  s:cterm08, s:cterm00, "", "")
+call <sid>hi("DiffText",     s:gui0D, s:gui00,  s:cterm0D, s:cterm00, "", "")
 call <sid>hi("DiffAdded",    s:gui0B, s:gui00,  s:cterm0B, s:cterm00, "", "")
 call <sid>hi("DiffFile",     s:gui06, s:gui00,  s:cterm06, s:cterm00, "", "")
 call <sid>hi("DiffNewFile",  s:gui0B, s:gui00,  s:cterm0B, s:cterm00, "", "")
