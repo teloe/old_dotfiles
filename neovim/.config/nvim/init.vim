@@ -285,6 +285,8 @@ let NERDTreeNodeDelimiter = "\x07"
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 let g:airline_theme='hybrid'
+" let g:airline_theme='dark_minimal'
+" let g:airline_theme='lucius'
 
 let g:webdevicons_enable_airline_statusline = 1
 if !exists('g:airline_symbols')
@@ -318,25 +320,32 @@ let g:airline#parts#ffenc#skip_expected_string=''
 " UI --------------------------------------------------- {{{
 
 call dein#add('flazz/vim-colorschemes')
+call dein#add('arcticicestudio/nord-vim')
 
 " Color schemes
 syntax on
 set background=dark
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colo ocean
+colo sidonia
+" colo ocean
 
-" Transparent backgrounds
+" Custom colors/backgrounds
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr ctermfg=NONE guibg=NONE
 hi! Comment gui=NONE
-hi! Folded guibg=NONE gui=NONE
-" hi! SignColumn guibg=NONE
-hi! DiffChange guibg=NONE
-hi! DiffAdd guibg=NONE
-hi! DiffDelete guibg=NONE
-" hi! Visual guifg=NONE guibg=#373b41
+" hi! Folded guibg=NONE gui=NONE guifg=#5c6573
+hi! Folded guibg=NONE gui=NONE guifg=NONE
+hi! SignColumn guibg=NONE
+hi! PMenu guibg=#202020
+hi! CursorLine guibg=#202020
+hi! DiffChange guibg=#202020 guifg=#728FA9
+hi! DiffAdd guibg=#202020 guifg=#728FA9
+hi! DiffDelete guibg=#202020
+hi! DiffText guibg=#202020 
+hi! Text guifg=#6991ac guibg=#202020
+hi! Visual guifg=NONE guibg=#373b41
 " }}}
 
 " Misc ------------------------------------------------- {{{

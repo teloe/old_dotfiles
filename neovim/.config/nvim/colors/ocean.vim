@@ -1,4 +1,4 @@
-" Minimal version of Chris Kempson's base16-ocean theme, 
+" Modified / minimal version of Chris Kempson's base16-ocean theme, 
 " https://github.com/chriskempson/base16-vim/blob/master/colors/base16-ocean.vim. 
 
 " vi:syntax=vim
@@ -11,14 +11,15 @@ endif
 
 " GUI color definitions
 " let s:gui00        = "2b303b" " blue bg
-let s:gui00        = "262626" " black bg
+" let s:gui00        = "262626" " black bg
+let s:gui00        = "1f1f24" " dark bg
 " let g:base16_gui00 = "2b303b"
-let g:base16_gui00 = "262626"
-let s:gui01        = "282c34"
-let g:base16_gui01 = "282c34"
+let g:base16_gui00 = "1f1f24"
+let s:gui01        = "282a2e"
+let g:base16_gui01 = "282a2e"
 " let s:gui02        = "4f5b66"
 let s:gui02        = "373b41"
-let g:base16_gui02 = "4f5b66"
+let g:base16_gui02 = "373b41"
 let s:gui03        = "65737e"
 let g:base16_gui03 = "65737e"
 let s:gui04        = "a7adba"
@@ -29,20 +30,21 @@ let s:gui06        = "dfe1e8"
 let g:base16_gui06 = "dfe1e8"
 let s:gui07        = "eff1f5"
 let g:base16_gui07 = "eff1f5"
-let s:gui08        = "bf616a"
+let s:gui08        = "bf616a" "red
 let g:base16_gui08 = "bf616a"
-let s:gui09        = "d08770"
+let s:gui09        = "d08770" "orange
 let g:base16_gui09 = "d08770"
-let s:gui0A        = "ebcb8b"
+let s:gui0A        = "ebcb8b" "yellow
 let g:base16_gui0A = "ebcb8b"
-let s:gui0B        = "a3be8c"
+let s:gui0B        = "a3be8c" "green
 let g:base16_gui0B = "a3be8c"
-let s:gui0C        = "96b5b4"
+let s:gui0C        = "96b5b4" "light-blue
 let g:base16_gui0C = "96b5b4"
-let s:gui0D        = "8fa1b3"
+let s:gui0D        = "8fa1b3" "blue
 let g:base16_gui0D = "8fa1b3"
-let s:gui0E        = "b48ead"
-let g:base16_gui0E = "b48ead"
+" let s:gui0E        = "b48ead" "purple
+let s:gui0E        = "96b5b4" "purple (light-blue)
+let g:base16_gui0E = "96b5b4"
 let s:gui0F        = "eff1f5"
 let g:base16_gui0F = "eff1f5"
 
@@ -217,7 +219,7 @@ call <sid>hi("CursorLine",    "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("CursorLineNr",  s:gui04, s:gui01, s:cterm04, s:cterm01, "", "")
 call <sid>hi("QuickFixLine",  "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("PMenu",         s:gui05, s:gui01, s:cterm05, s:cterm01, "none", "")
-call <sid>hi("PMenuSel",      s:gui01, s:gui06, s:cterm01, s:cterm06, "", "")
+call <sid>hi("PMenuSel",      s:gui01, s:gui0C, s:cterm01, s:cterm0C, "", "")
 call <sid>hi("TabLine",       s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineFill",   s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineSel",    s:gui0B, s:gui01, s:cterm0B, s:cterm01, "none", "")
@@ -244,12 +246,12 @@ call <sid>hi("Special",      s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("SpecialChar",  s:gui0F, "", s:cterm0F, "", "", "")
 call <sid>hi("Statement",    s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("StorageClass", s:gui06, "", s:cterm06, "", "", "")
-call <sid>hi("String",       s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("String",       s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Structure",    s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("Tag",          s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Todo",         s:gui06, s:gui01, s:cterm06, s:cterm01, "", "")
-call <sid>hi("Type",         s:gui06, "", s:cterm06, "", "none", "")
-call <sid>hi("Typedef",      s:gui06, "", s:cterm06, "", "", "")
+call <sid>hi("Type",         s:gui05, "", s:cterm05, "", "none", "")
+call <sid>hi("Typedef",      s:gui05, "", s:cterm05, "", "", "")
 
 " C highlighting
 call <sid>hi("cOperator",   s:gui0C, "", s:cterm0C, "", "", "")
@@ -368,7 +370,7 @@ call <sid>hi("rubyConstant",                s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("rubyInterpolationDelimiter",  s:gui0F, "", s:cterm0F, "", "", "")
 call <sid>hi("rubyRegexp",                  s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("rubySymbol",                  s:gui0B, "", s:cterm0B, "", "", "")
-call <sid>hi("rubyStringDelimiter",         s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("rubyStringDelimiter",         s:gui0D, "", s:cterm0D, "", "", "")
 
 " SASS highlighting
 call <sid>hi("sassidChar",     s:gui05, "", s:cterm05, "", "", "")
