@@ -10,14 +10,37 @@ export ZSH="/Users/tom/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
 
-SPACESHIP_CHAR_SYMBOL="> "
+# SPACESHIP_CHAR_SYMBOL="> "
+SPACESHIP_CHAR_SYMBOL="❯ "
 SPACESHIP_GIT_SYMBOL="ᚠ "
 SPACESHIP_CHAR_COLOR_SUCCESS=NONE
+# SPACESHIP_CHAR_COLOR_SUCCESS=blue
 SPACESHIP_DIR_COLOR=NONE
 SPACESHIP_DIR_TRUNC=2
 SPACESHIP_PACKAGE_SHOW=false
-# SPACESHIP_NODE_SHOW=false
+SPACESHIP_BATTERY_SHOW=false
+SPACESHIP_NODE_SHOW=false
 SPACESHIP_EXEC_TIME_SHOW=false
+
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_PROMPT_SEPARATE_LINE=true
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_COLOR=none
+SPACESHIP_HOST_SHOW=always
+SPACESHIP_GIT_PREFIX="--> "
+
+SPACESHIP_PROMPT_ORDER=(
+    dir
+    git
+    line_sep
+    char
+)
+SPACESHIP_RPROMPT_ORDER=(
+    # dir
+    # git
+    host
+    time
+)
 
 # Aliases
 alias c="clear"
@@ -27,7 +50,7 @@ alias vu="vagrant up"
 alias vssh="vagrant ssh"
 alias vh="vagrant halt"
 alias v="nvim"
-alias s="npm start"
+alias gw="gulp watch"
 
 # Desktop Programs
 alias chrome="open -a google\ chrome"

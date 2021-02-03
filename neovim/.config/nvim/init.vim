@@ -14,6 +14,9 @@ set encoding=utf8
 " Remap leader key to ,
 let g:mapleader=','
 
+" Mouse
+set mouse=a
+
 " Remap ; to :
 nnoremap ; :
 
@@ -271,9 +274,9 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
 " Remove the arrows next to directories
-" let NERDTreeDirArrowExpandable = "\u00a0"
-" let NERDTreeDirArrowCollapsible = "\u00a0"
-" let NERDTreeNodeDelimiter = "\x07"
+let NERDTreeDirArrowExpandable = "\u00a0"
+let NERDTreeDirArrowCollapsible = "\u00a0"
+let NERDTreeNodeDelimiter = "\x07"
 
 " }}}
 
@@ -283,7 +286,7 @@ call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 let g:airline_theme='hybrid'
 " let g:airline_theme='onedark'
-" let g:airline_theme='dark_minimal'
+" let g:airline_theme='desertink'
 
 let g:webdevicons_enable_airline_statusline = 1
 if !exists('g:airline_symbols')
@@ -316,42 +319,50 @@ let g:airline#parts#ffenc#skip_expected_string=''
 
 " UI --------------------------------------------------- {{{
 
-" call dein#add('flazz/vim-colorschemes')
+call dein#add('flazz/vim-colorschemes')
 call dein#add('arcticicestudio/nord-vim')
 call dein#add('joshdick/onedark.vim')
 call dein#add('chriskempson/base16-vim')
 call dein#add('sickill/vim-monokai')
 call dein#add('tomasiser/vim-code-dark')
-call dein#add('mhartington/oceanic-next')
 call dein#add('jnurmine/Zenburn')
+call dein#add('morhetz/gruvbox')
+call dein#add('davidosomething/vim-colors-meh')
+call dein#add('nightsense/stellarized')
+call dein#add('ulwlu/elly.vim')
+call dein#add('co1ncidence/mountaineer.vim')
+call dein#add('banga/vim-muted')
 
 " Color schemes
 syntax on
 set background=dark
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colo dust
-" colo ocean
+colo bland
 
 " Custom colors/backgrounds
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
-hi! LineNr ctermfg=NONE guibg=NONE 
+" hi! LineNr guibg=NONE 
 hi! Comment gui=NONE
-hi! Folded guibg=NONE gui=NONE guifg=NONE
-" hi! SignColumn guibg=#202020
-" hi! PMenu guibg=#202020 
-" hi! PMenuSel guibg=#96D9F1 guifg=#202020
-" hi! CursorLine guibg=#202020
-" hi! DiffChange guibg=#202020 ctermbg=Black
-" hi! DiffAdd guibg=#202020 ctermbg=Black
-" hi! DiffDelete guibg=#202020 ctermbg=Black
-" hi! DiffText guibg=#202020 
-" hi! Text guifg=#6991ac guibg=#202020
-hi! Visual guifg=NONE guibg=#373b41
+" hi! Folded guibg=NONE gui=NONE guifg=NONE
+" hi! SignColumn guibg=NONE
+" hi! PMenu guibg=#202020 guifg=#D7D7CE
+" hi! PMenu guibg=#2C2C2D
+" hi! PMenuSel guibg=#8fffff guifg=#000000
+" hi! CursorLine guibg=NONE
+" hi! DiffChange guibg=#2C2C2D ctermbg=Black
+" hi! DiffAdd guifg=#373b41
+" hi! DiffDelete guibg=#2C2C2D ctermbg=Black
+" hi! DiffText guibg=#2C2C2D 
+" hi! Visual guifg=NONE guibg=#373b41 gui=NONE
 " }}}
 
 " Misc ------------------------------------------------- {{{
+
+" Live markdown preview
+call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
+					\ 'build': 'sh -c "cd app && yarn install"' })
 
 " Vim repeat
 call dein#add('tpope/vim-repeat')
@@ -412,9 +423,13 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('Yggdroot/indentLine')
 
 " Icons
-" call dein#add('ryanoasis/vim-devicons')
+call dein#add('ryanoasis/vim-devicons')
 " let g:webdevicons_enable_nerdtree = 0
-" call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+
+" Minimap
+" call dein#add('wfxr/minimap.vim')
+" g:minimap_auto_start
 
 " }}}
 
