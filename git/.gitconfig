@@ -3,7 +3,7 @@
     email = tomeloe@gmail.com
     
 [core]
-  editor = "nvim"
+    editor = "nvim"
 
 [github]
     user = teloe
@@ -15,10 +15,10 @@
     cm      = commit -m
     p       = push
     br      = branch
-	co      = checkout
+    co      = checkout
     cob     = checkout -b
     cl      = clone
     unstage = reset HEAD --
-	lg      = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg      = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lp      = log --pretty=oneline
-	last    = log -1 HEAD
+    last    = log -1 HEAD
