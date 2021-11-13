@@ -103,9 +103,9 @@ noremap <C-n> <C-f>n
 autocmd Filetype json let g:indentLine_enabled=0
 
 " Buffers
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :bd<cr>
+" map gn :bn<cr>
+" map gp :bp<cr>
+" map gd :bd<cr>
 
 " Space to toggle folds.
 autocmd FileType css,scss,vim set foldmethod=marker foldlevel=0
@@ -246,10 +246,10 @@ call s:profile(s:denite_options)
 
 " Coc.nvim --------------------------------------------- {{{
 
-call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+" call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
 
 " Remap :CocFix lint command
-nnoremap <leader>f :CocFix<CR>
+" nnoremap <leader>f :CocFix<CR>
 
 " }}}
 
@@ -282,16 +282,17 @@ let NERDTreeNodeDelimiter = "\x07"
 
  " Airline ---------------------------------------------- {{{
 
-call dein#add('vim-airline/vim-airline')
-call dein#add('vim-airline/vim-airline-themes')
-let g:airline_theme='hybrid'
-" let g:airline_theme='onedark'
-" let g:airline_theme='desertink'
+" call dein#add('vim-airline/vim-airline')
+" call dein#add('vim-airline/vim-airline-themes')
+" let g:airline_theme='hybrid'
+" let g:airline_theme='monochrome'
+" let g:airline_theme='minimalist'
+" let g:airline_theme='nord_minimal'
 
 let g:webdevicons_enable_airline_statusline = 1
 if !exists('g:airline_symbols')
 let g:airline_symbols = {
-  \ 'branch': 'ᚠ',
+  \ 'branch': '',
   \ 'modified': ' •'
   \}
 endif
@@ -321,24 +322,31 @@ let g:airline#parts#ffenc#skip_expected_string=''
 
 call dein#add('flazz/vim-colorschemes')
 call dein#add('arcticicestudio/nord-vim')
-call dein#add('joshdick/onedark.vim')
+call dein#add('navarasu/onedark.nvim')
+let g:onedark_transparent_background = 1
 call dein#add('chriskempson/base16-vim')
 call dein#add('sickill/vim-monokai')
 call dein#add('tomasiser/vim-code-dark')
 call dein#add('jnurmine/Zenburn')
 call dein#add('morhetz/gruvbox')
-call dein#add('davidosomething/vim-colors-meh')
-call dein#add('nightsense/stellarized')
 call dein#add('ulwlu/elly.vim')
-call dein#add('co1ncidence/mountaineer.vim')
-call dein#add('banga/vim-muted')
+call dein#add('rktjmp/lush.nvim')
+call dein#add('casonadams/walh')
+call dein#add('wbthomason/vim-nazgul')
 
 " Color schemes
 syntax on
 set background=dark
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colo bland
+" colo ryuuko
+" colo predawn
+" colo raider
+" colo bronzage
+colo distill
+" colo ds
+" colo whitedust
+" colo wm
 
 " Custom colors/backgrounds
 hi! Normal ctermbg=NONE guibg=NONE
@@ -346,7 +354,7 @@ hi! NonText ctermbg=NONE guibg=NONE
 " hi! LineNr guibg=NONE 
 hi! Comment gui=NONE
 " hi! Folded guibg=NONE gui=NONE guifg=NONE
-" hi! SignColumn guibg=NONE
+hi! SignColumn guibg=NONE
 " hi! PMenu guibg=#202020 guifg=#D7D7CE
 " hi! PMenu guibg=#2C2C2D
 " hi! PMenuSel guibg=#8fffff guifg=#000000
@@ -356,6 +364,7 @@ hi! Comment gui=NONE
 " hi! DiffDelete guibg=#2C2C2D ctermbg=Black
 " hi! DiffText guibg=#2C2C2D 
 " hi! Visual guifg=NONE guibg=#373b41 gui=NONE
+
 " }}}
 
 " Misc ------------------------------------------------- {{{
@@ -366,6 +375,14 @@ call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.mar
 
 " Vim repeat
 call dein#add('tpope/vim-repeat')
+
+" JSX syntax highlighting
+call dein#add('yuezk/vim-js')
+call dein#add('maxmellon/vim-jsx-pretty')
+call dein#add('chemzqm/vim-jsx-improve')
+
+" JS Highlighting
+call dein#add('pangloss/vim-javascript')
 
 " Auto-close plugin
 call dein#add('rstacruz/vim-closer')
@@ -406,8 +423,8 @@ nmap <leader>f  <Plug>(coc-format-selected)
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " Git
-call dein#add('mhinz/vim-signify')
-call dein#add('tpope/vim-fugitive')
+" call dein#add('mhinz/vim-signify')
+" call dein#add('tpope/vim-fugitive')
 
 " Tmux/Neovim movement integration
 call dein#add('christoomey/vim-tmux-navigator')
@@ -427,9 +444,437 @@ call dein#add('ryanoasis/vim-devicons')
 " let g:webdevicons_enable_nerdtree = 0
 call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
 
+" }}}
+
+" nvim v0.5 {{{
+
+" Native nvim LSP
+call dein#add('neovim/nvim-lspconfig')
+
+" tsserver {{{
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+local nvim_lsp = require('lspconfig')
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  --Enable completion triggered by <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { "pyright", "rust_analyzer", "tsserver" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+EOF
+
+" Compe Autocompletion
+call dein#add('hrsh7th/nvim-compe')
+set completeopt=menuone,noselect
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.autocomplete = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable'
+let g:compe.throttle_time = 80
+let g:compe.source_timeout = 200
+let g:compe.resolve_timeout = 800
+let g:compe.incomplete_delay = 400
+let g:compe.max_abbr_width = 100
+let g:compe.max_kind_width = 100
+let g:compe.max_menu_width = 100
+let g:compe.documentation = v:true
+
+let g:compe.source = {}
+let g:compe.source.path = v:true
+let g:compe.source.buffer = v:true
+let g:compe.source.calc = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.nvim_lua = v:true
+let g:compe.source.vsnip = v:true
+let g:compe.source.ultisnips = v:true
+let g:compe.source.luasnip = v:true
+let g:compe.source.emoji = v:true
+
+" Gitsigns
+call dein#add('nvim-lua/plenary.nvim')
+call dein#add('lewis6991/gitsigns.nvim')
+set statusline+=%{get(b:,'gitsigns_status','')}
+
+lua << EOF
+require('gitsigns').setup {
+  signs = {
+    add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+    change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+  },
+  numhl = false,
+  linehl = false,
+  keymaps = {
+    -- Default keymap options
+    noremap = true,
+
+    ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+    ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+
+    ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+    ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+    ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+    ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+    ['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+    ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
+    ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+    ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+
+    -- Text objects
+    ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
+    ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
+  },
+  watch_index = {
+    interval = 1000,
+    follow_files = true
+  },
+  current_line_blame = false,
+  current_line_blame_delay = 1000,
+  current_line_blame_position = 'eol',
+  sign_priority = 6,
+  update_debounce = 100,
+  status_formatter = nil, -- Use default
+  word_diff = false,
+  use_internal_diff = true,  -- If luajit is present
+}
+EOF
+
+" }}}
+
+" html {{{
+lua << EOF
+require'lspconfig'.html.setup{}
+EOF
+" }}}
+
+" css {{{
+lua << EOF
+require'lspconfig'.cssls.setup{}
+EOF
+" }}}
+
+" Treesitter
+call dein#add('nvim-treesitter/nvim-treesitter', {'hook_post_update': 'TSUpdate'})
+
+" Lualine
+call dein#add('hoob3rt/lualine.nvim')
+
+" lua << EOF
+" require('lualine').setup{
+    " options = {theme = 'onedark'}
+" }
+" EOF
+
+" Eviline {{{
+lua << EOF
+-- Eviline config for lualine
+-- Author: shadmansaleh
+-- Credit: glepnir
+local lualine = require 'lualine'
+
+-- Color table for highlights
+local colors = {
+  bg = '#202328',
+  fg = '#bbc2cf',
+  yellow = '#ECBE7B',
+  cyan = '#008080',
+  darkblue = '#081633',
+  green = '#98be65',
+  orange = '#FF8800',
+  violet = '#a9a1e1',
+  magenta = '#c678dd',
+  blue = '#51afef',
+  red = '#ec5f67'
+}
+
+local conditions = {
+  buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,
+  hide_in_width = function() return vim.fn.winwidth(0) > 80 end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand('%:p:h')
+    local gitdir = vim.fn.finddir('.git', filepath .. ';')
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
+  end
+}
+
+-- Config
+local config = {
+  options = {
+    -- Disable sections and component separators
+    component_separators = "",
+    section_separators = "",
+    theme = {
+      -- We are going to use lualine_c an lualine_x as left and
+      -- right section. Both are highlighted by c theme .  So we
+      -- are just setting default looks o statusline
+      normal = {c = {fg = colors.fg, bg = colors.bg}},
+      inactive = {c = {fg = colors.fg, bg = colors.bg}}
+    }
+  },
+  sections = {
+    -- these are to remove the defaults
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    -- These will be filled later
+    lualine_c = {},
+    lualine_x = {}
+  },
+  inactive_sections = {
+    -- these are to remove the defaults
+    lualine_a = {},
+    lualine_v = {},
+    lualine_y = {},
+    lualine_z = {},
+    lualine_c = {},
+    lualine_x = {}
+  }
+}
+
+-- Inserts a component in lualine_c at left section
+local function ins_left(component)
+  table.insert(config.sections.lualine_c, component)
+end
+
+-- Inserts a component in lualine_x ot right section
+local function ins_right(component)
+  table.insert(config.sections.lualine_x, component)
+end
+
+ins_left {
+  function() return '▊' end,
+  color = {fg = colors.blue}, -- Sets highlighting of component
+  left_padding = 0 -- We don't need space before this
+}
+
+ins_left {
+  -- mode component
+  function()
+    -- auto change color according to neovims mode
+    local mode_color = {
+      n = colors.red,
+      i = colors.green,
+      v = colors.blue,
+      [''] = colors.blue,
+      V = colors.blue,
+      c = colors.magenta,
+      no = colors.red,
+      s = colors.orange,
+      S = colors.orange,
+      [''] = colors.orange,
+      ic = colors.yellow,
+      R = colors.violet,
+      Rv = colors.violet,
+      cv = colors.red,
+      ce = colors.red,
+      r = colors.cyan,
+      rm = colors.cyan,
+      ['r?'] = colors.cyan,
+      ['!'] = colors.red,
+      t = colors.red
+    }
+    vim.api.nvim_command(
+        'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
+            colors.bg)
+    return ''
+  end,
+  color = "LualineMode",
+  left_padding = 0
+}
+
+ins_left {
+  -- filesize component
+  function()
+    local function format_file_size(file)
+      local size = vim.fn.getfsize(file)
+      if size <= 0 then return '' end
+      local sufixes = {'b', 'k', 'm', 'g'}
+      local i = 1
+      while size > 1024 do
+        size = size / 1024
+        i = i + 1
+      end
+      return string.format('%.1f%s', size, sufixes[i])
+    end
+    local file = vim.fn.expand('%:p')
+    if string.len(file) == 0 then return '' end
+    return format_file_size(file)
+  end,
+  condition = conditions.buffer_not_empty
+}
+
+ins_left {
+  'filename',
+  condition = conditions.buffer_not_empty,
+  color = {fg = colors.magenta, gui = 'bold'}
+}
+
+ins_left {'location'}
+
+ins_left {'progress', color = {fg = colors.fg, gui = 'bold'}}
+
+ins_left {
+  'diagnostics',
+  sources = {'nvim_lsp'},
+  symbols = {error = ' ', warn = ' ', info = ' '},
+  color_error = colors.red,
+  color_warn = colors.yellow,
+  color_info = colors.cyan
+}
+
+-- Insert mid section. You can make any number of sections in neovim :)
+-- for lualine it's any number greater then 2
+ins_left {function() return '%=' end}
+
+ins_left {
+  -- Lsp server name .
+  function()
+    local msg = 'No Active Lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then return msg end
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
+  end,
+  icon = ' LSP:',
+  color = {fg = '#ffffff', gui = 'bold'}
+}
+
+-- Add components to right sections
+ins_right {
+  'o:encoding', -- option component same as &encoding in viml
+  upper = true, -- I'm not sure why it's upper case either ;)
+  condition = conditions.hide_in_width,
+  color = {fg = colors.green, gui = 'bold'}
+}
+
+ins_right {
+  'fileformat',
+  upper = true,
+  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  color = {fg = colors.green, gui = 'bold'}
+}
+
+ins_right {
+  'branch',
+  icon = '',
+  condition = conditions.check_git_workspace,
+  color = {fg = colors.violet, gui = 'bold'}
+}
+
+ins_right {
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = {added = ' ', modified = '柳 ', removed = ' '},
+  color_added = colors.green,
+  color_modified = colors.orange,
+  color_removed = colors.red,
+  condition = conditions.hide_in_width
+}
+
+ins_right {
+  function() return '▊' end,
+  color = {fg = colors.blue},
+  right_padding = 0
+}
+
+-- Now don't forget to initialize lualine
+lualine.setup(config)
+EOF
+
+" }}}
+
+
 " Minimap
 " call dein#add('wfxr/minimap.vim')
-" g:minimap_auto_start
+" let g:minimap_width = 10
+" let g:minimap_auto_start = 1
+" let g:minimap_auto_start_win_enter = 1
+
+" Barbar buffer management
+call dein#add('kyazdani42/nvim-web-devicons')
+call dein#add('romgrk/barbar.nvim')
+" Move to previous/next
+nnoremap <silent>    bp :BufferPrevious<CR>
+nnoremap <silent>    bn :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    b< :BufferMovePrevious<CR>
+nnoremap <silent>    b> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    b1 :BufferGoto 1<CR>
+nnoremap <silent>    b2 :BufferGoto 2<CR>
+nnoremap <silent>    b3 :BufferGoto 3<CR>
+nnoremap <silent>    b4 :BufferGoto 4<CR>
+nnoremap <silent>    b5 :BufferGoto 5<CR>
+nnoremap <silent>    b6 :BufferGoto 6<CR>
+nnoremap <silent>    b7 :BufferGoto 7<CR>
+nnoremap <silent>    b8 :BufferGoto 8<CR>
+nnoremap <silent>    b9 :BufferLast<CR>
+" Close buffer
+nnoremap <silent>    bc :BufferClose<CR>
+" Wipeout buffer
+"                       :BufferWipeout<CR>
+" Close commands
+"                       :BufferCloseAllButCurrent<CR>
+"                       :BufferCloseBuffersLeft<CR>
+"                       :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent>    bp :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent>    bd :BufferOrderByDirectory<CR>
+nnoremap <silent>    bl :BufferOrderByLanguage<CR>
+
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
 
 " }}}
 
@@ -442,3 +887,4 @@ call dein#end()
 call dein#save_state()
 
 filetype plugin indent on
+

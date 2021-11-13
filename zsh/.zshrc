@@ -8,11 +8,13 @@ export ZSH="/Users/tom/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
+ZSH_THEME="gitsome"
 
 # SPACESHIP_CHAR_SYMBOL="> "
 SPACESHIP_CHAR_SYMBOL="❯ "
-SPACESHIP_GIT_SYMBOL="ᚠ "
+# SPACESHIP_GIT_SYMBOL="ᚠ "
+SPACESHIP_GIT_SYMBOL=" "
 SPACESHIP_CHAR_COLOR_SUCCESS=NONE
 # SPACESHIP_CHAR_COLOR_SUCCESS=blue
 SPACESHIP_DIR_COLOR=NONE
@@ -27,7 +29,7 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_COLOR=none
 SPACESHIP_HOST_SHOW=always
-SPACESHIP_GIT_PREFIX="--> "
+# SPACESHIP_GIT_PREFIX="--> "
 
 SPACESHIP_PROMPT_ORDER=(
     dir
@@ -38,8 +40,8 @@ SPACESHIP_PROMPT_ORDER=(
 SPACESHIP_RPROMPT_ORDER=(
     # dir
     # git
-    host
-    time
+    # host
+    # time
 )
 
 # Aliases
@@ -153,3 +155,5 @@ source $ZSH/oh-my-zsh.sh
   # Set Spaceship ZSH as a prompt
   # autoload -U promptinit; promptinit
   # prompt spaceship
+  
+# macchina -c blue --no-box --no-ascii --no-separator --no-bar-delimiter --bar
