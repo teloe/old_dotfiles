@@ -23,6 +23,7 @@ M.map("n", "q", "<nop>")
 
 -- Quick save
 M.map("n", "<Leader>s", ":update<CR>")
+M.map("n", "<Leader>n", ":NvimTreeToggle<CR>")
 
 
 -- M.map("n", "<Leader>H", '<cmd>TSHighlightCapturesUnderCursor<cr>')

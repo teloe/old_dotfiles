@@ -1,7 +1,3 @@
--- local vim = vim
--- local api = vim.api
-
-
 local fn = vim.fn
 local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -32,11 +28,22 @@ return require("packer").startup(function(use)
     })
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
-
     use "nvim-telescope/telescope.nvim"
     use "akinsho/toggleterm.nvim"
     use "nvim-treesitter/nvim-treesitter"
     use "hoob3rt/lualine.nvim"
+
+    -- Filetree
+    use "kyazdani42/nvim-web-devicons"
+    use {
+        "kyazdani42/nvim-tree.lua",
+        config =
+        function()
+            require'nvim-tree'.setup {
+                open_on_setup = false,
+            }
+        end
+    }
 
     -- LSP
     use "neovim/nvim-lspconfig"
@@ -46,7 +53,6 @@ return require("packer").startup(function(use)
     -- Colors
     use "flazz/vim-colorschemes"
     use "habamax/vim-bronzage"
-    vim.cmd("colorscheme distill")
 
     -- Git
     use "tpope/vim-fugitive"

@@ -5,7 +5,9 @@
 --
 -- repo: https://github.com/teloe/dotfiles/
 
+require "plugins"
 require "options"
 require "mappings"
+require "colors"
 require "folds"
-require "plugins"
+require "nvim-tree"
