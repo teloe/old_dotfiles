@@ -8,15 +8,13 @@ export ZSH="/Users/tom/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="spaceship"
-ZSH_THEME="gitsome"
+ZSH_THEME="spaceship"
+# ZSH_THEME="gitsome"
 
-# SPACESHIP_CHAR_SYMBOL="> "
 SPACESHIP_CHAR_SYMBOL="❯ "
 # SPACESHIP_GIT_SYMBOL="ᚠ "
 SPACESHIP_GIT_SYMBOL=" "
 SPACESHIP_CHAR_COLOR_SUCCESS=NONE
-# SPACESHIP_CHAR_COLOR_SUCCESS=blue
 SPACESHIP_DIR_COLOR=NONE
 SPACESHIP_DIR_TRUNC=2
 SPACESHIP_PACKAGE_SHOW=false
