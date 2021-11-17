@@ -1,5 +1,7 @@
 vim.cmd("colorscheme distill")
 
-vim.cmd([[hi Normal guibg=none]])
-vim.cmd([[hi Comment gui=none]])
-
+vim.cmd([[
+    hi Normal      ctermbg=none guibg=none
+    hi SignColumn  ctermbg=none guibg=none
+    hi Comment     cterm=none   gui=none
+]])

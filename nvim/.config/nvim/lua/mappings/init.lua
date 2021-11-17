@@ -9,6 +9,7 @@ function M.map(mode, lhs, rhs, opts)
     end
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+
 function M.mapBuf(buf, mode, lhs, rhs, opts)
     local options = {noremap = true, silent = true}
     if opts then
@@ -22,8 +23,29 @@ M.map("n", "q", "<nop>")
 
 
 -- Quick save
-M.map("n", "<Leader>s", ":update<CR>")
-M.map("n", "<Leader>n", ":NvimTreeToggle<CR>")
+M.map("n", "<Leader>s", ":update<cr>")
+
+-- Toggle nvim-tree
+M.map("n", "<Leader>n", ":NvimTreeToggle<cr>")
+
+-- barbar.nvim
+M.map("n", "bp", ":BufferPrevious<cr>")
+M.map("n", "bn", ":BufferNext<cr>")
+M.map("n", "b<", ":BufferMovePrevious<cr>")
+M.map("n", "b>", ":BufferMoveNext<cr>")
+M.map("n", "bc", ":BufferClose<cr>")
+M.map("n", "bp", ":BufferPick<cr>")
+M.map("n", "bd", ":BufferOrderByDirectory<cr>")
+M.map("n", "bl", ":BufferOrderByLanguage<cr>")
+M.map("n", "b1", ":BufferGoto 1<cr>")
+M.map("n", "b2", ":BufferGoto 2<cr>")
+M.map("n", "b3", ":BufferGoto 3<cr>")
+M.map("n", "b4", ":BufferGoto 4<cr>")
+M.map("n", "b5", ":BufferGoto 5<cr>")
+M.map("n", "b6", ":BufferGoto 6<cr>")
+M.map("n", "b7", ":BufferGoto 7<cr>")
+M.map("n", "b8", ":BufferGoto 8<cr>")
+M.map("n", "b9", ":BufferGoto 9<cr>")
 
 
 -- M.map("n", "<Leader>H", '<cmd>TSHighlightCapturesUnderCursor<cr>')
@@ -48,10 +70,12 @@ M.map("n", "<Space>", "za")
 M.map("n", "<Space>", "za")
 M.map("n", "<Leader>,", "<cmd>bnext<cr>")
 M.map("n", "<Leader>.", "<cmd>bprevious<cr>")
+
 M.map("n", "k", "v:count == 0 ? 'gk' : 'k'", {expr = true})
 M.map("n", "j", "v:count == 0 ? 'gj' : 'j'", {expr = true})
 M.map("v", "k", "v:count == 0 ? 'gk' : 'k'", {expr = true})
 M.map("v", "j", "v:count == 0 ? 'gj' : 'j'", {expr = true})
+
 M.map("v", "<", "<gv")
 M.map("v", ">", ">gv")
 M.map("n", "<Leader>d", '"_d')
