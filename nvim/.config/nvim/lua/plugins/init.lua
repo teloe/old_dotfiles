@@ -29,7 +29,6 @@ return require("packer").startup(function(use)
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Filetree
-    use "kyazdani42/nvim-web-devicons"
     use {
         "kyazdani42/nvim-tree.lua",
         config =
@@ -45,6 +44,8 @@ return require("packer").startup(function(use)
     use "nvim-treesitter/nvim-treesitter"
     use "romgrk/barbar.nvim"
     use "nvim-lualine/lualine.nvim"
+
+    use "kyazdani42/nvim-web-devicons"
 
     -- LSP
     use "neovim/nvim-lspconfig"
