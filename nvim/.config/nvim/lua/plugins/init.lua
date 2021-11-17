@@ -29,15 +29,7 @@ return require("packer").startup(function(use)
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Filetree
-    use {
-        "kyazdani42/nvim-tree.lua",
-        config =
-        function()
-            require'nvim-tree'.setup {
-                open_on_setup = false,
-            }
-        end
-    }
+    use "kyazdani42/nvim-tree.lua"
 
     use "nvim-telescope/telescope.nvim"
     use "akinsho/toggleterm.nvim"
