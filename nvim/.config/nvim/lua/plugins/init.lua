@@ -37,6 +37,7 @@ return require("packer").startup(function(use)
     use "romgrk/barbar.nvim"
     use "nvim-lualine/lualine.nvim"
 
+    -- Icons
     use "kyazdani42/nvim-web-devicons"
 
     -- LSP
@@ -59,7 +60,7 @@ return require("packer").startup(function(use)
     use "tpope/vim-fugitive"
     use "lewis6991/gitsigns.nvim"
 
-    -- HTML
+    -- Emmet
     use "mattn/emmet-vim"
 
     -- Automatically set up configuration after cloning packer.nvim

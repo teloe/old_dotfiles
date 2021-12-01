@@ -1,3 +1,5 @@
+local vim = vim
+
 vim.cmd("colorscheme distill")
 
 vim.cmd([[

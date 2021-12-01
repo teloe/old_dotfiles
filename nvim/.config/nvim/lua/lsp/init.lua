@@ -3,9 +3,8 @@ local lspconfig = require"lspconfig"
 local configs = require"lspconfig/configs"
 local cmp = require"cmp"
 
--- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
@@ -81,22 +80,21 @@ cmp.setup {
 }
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore)
-cmp.setup.cmdline("/", {
-    sources = {
-        { name = "buffer" }
-    }
-})
+-- cmp.setup.cmdline("/", {
+--     sources = {
+--         { name = "buffer" }
+--     }
+-- })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore)
-cmp.setup.cmdline(":", {
-    sources = cmp.config.sources({
-        { name = "path" }
-    }, {
-        { name = "cmdline" }
-    })
-})
+-- cmp.setup.cmdline(":", {
+--     sources = cmp.config.sources({
+--         { name = "path" }
+--     }, {
+--         { name = "cmdline" }
+--     })
+-- })
 
--- Emmet-ls
 configs.emmet_ls = {
     default_config = {
         cmd = {"emmet-ls", "--stdio"},
@@ -108,7 +106,6 @@ configs.emmet_ls = {
     }
 }
 
--- Enable each lsp server
 lspconfig.emmet_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities
@@ -126,3 +123,25 @@ lspconfig.tsserver.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
+
+local vs_code_extracted = {
+  html = "vscode-html-language-server",
+  cssls = "vscode-css-language-server",
+  vimls = "vim-language-server"
+}
+
+for ls, cmd in pairs(vs_code_extracted) do
+  lspconfig[ls].setup {
+    cmd = {cmd, "--stdio"},
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
+end
+
+lspconfig.jsonls.setup {
+    cmd = {"vscode-json-language-server", "--stdio"},
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"json", "jsonc"},
+}
+
