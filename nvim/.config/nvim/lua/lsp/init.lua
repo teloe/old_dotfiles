@@ -4,6 +4,10 @@ local configs = require"lspconfig/configs"
 local cmp = require"cmp"
 
 cmp.setup {
+    completion = {
+        completeopt = 'menu,menuone,noinsert',
+    },
+
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
@@ -61,6 +65,11 @@ configs.emmet_ls = {
     }
 }
 
+lspconfig.emmet_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 -- Enable each lsp server
 lspconfig.tsserver.setup {
     filetypes = {
@@ -72,17 +81,5 @@ lspconfig.tsserver.setup {
         "typescript.tsx"
     },
     on_attach = on_attach,
-    capabilities = capabilities,
-    commands = {
-        OrganizeImports = {
-            organize_imports,
-            description = "Organize Imports"
-        }
-    }
-}
-
-lspconfig.emmet_ls.setup {
-    on_attach = on_attach,
     capabilities = capabilities
 }
-
