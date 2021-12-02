@@ -59,6 +59,15 @@ return require("packer").startup(function(use)
     -- Git
     use "tpope/vim-fugitive"
     use "lewis6991/gitsigns.nvim"
+    require "gitsigns".setup {
+        signs = {
+            add = {hl = "GitGutterAdd", text = "│"},
+            change = {hl = "GitGutterChange", text = "│"},
+            delete = {hl = "GitGutterDelete", text = "_"},
+            topdelete = {hl = "GitGutterDelete", text = "‾"},
+            changedelete = {hl = "GitGutterChangeDelete", text = "~"}
+        }
+    }
 
     -- Emmet
     use "mattn/emmet-vim"
