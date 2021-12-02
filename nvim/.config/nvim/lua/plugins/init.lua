@@ -36,6 +36,8 @@ return require("packer").startup(function(use)
     use "nvim-treesitter/nvim-treesitter"
     use "romgrk/barbar.nvim"
     use "nvim-lualine/lualine.nvim"
+    use "windwp/nvim-autopairs"
+    require('nvim-autopairs').setup{}
 
     -- Icons
     use "kyazdani42/nvim-web-devicons"
@@ -69,8 +71,18 @@ return require("packer").startup(function(use)
         }
     }
 
-    -- Emmet
+    -- HTML
+    use "othree/html5.vim"
     use "mattn/emmet-vim"
+
+    -- CSS
+    use "hail2u/vim-css3-syntax"
+    use {
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+        require "colorizer".setup()
+      end
+    }
 
     -- Automatically set up configuration after cloning packer.nvim
     if packer_bootstrap then
