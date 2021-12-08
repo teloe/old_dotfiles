@@ -35,8 +35,12 @@ return require("packer").startup(function(use)
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
 
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
+    }
+
     use "akinsho/toggleterm.nvim"
-    use "nvim-treesitter/nvim-treesitter"
     use "romgrk/barbar.nvim"
     use "nvim-lualine/lualine.nvim"
     use "windwp/nvim-autopairs"
