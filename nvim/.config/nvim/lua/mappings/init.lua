@@ -28,7 +28,7 @@ M.map("n", "<Leader>s", ":update<cr>")
 -- Toggle nvim-tree
 M.map("n", "<Leader>n", ":NvimTreeToggle<cr>")
 
--- barbar.nvim
+-- Barbar.nvim
 M.map("n", "bp", ":BufferPrevious<cr>")
 M.map("n", "bn", ":BufferNext<cr>")
 M.map("n", "b<", ":BufferMovePrevious<cr>")
@@ -47,13 +47,12 @@ M.map("n", "b7", ":BufferGoto 7<cr>")
 M.map("n", "b8", ":BufferGoto 8<cr>")
 M.map("n", "b9", ":BufferGoto 9<cr>")
 
-
 -- M.map("n", "<Leader>H", '<cmd>TSHighlightCapturesUnderCursor<cr>')
--- M.map("n", "<c-p>", "<cmd>lua require('mh.telescope').find_files()<cr>")
--- M.map("n", "<Leader>h", "<cmd>lua require('mh.telescope').help_tags()<cr>")
--- M.map("n", "<Leader>c", "<cmd>lua require('mh.telescope').colors()<cr>")
--- M.map("n", "<Leader>a", "<cmd>Telescope live_grep<cr>")
--- M.map("n", "<Leader>b", "<cmd>Telescope buffers<cr>")
+M.map("n", "<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+M.map("n", "<Leader>h", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
+M.map("n", "<Leader>c", "<cmd>lua require('telescope.builtin').colorscheme()<cr>")
+M.map("n", "<Leader>b", "<cmd>Telescope buffers<cr>")
+M.map("n", "<Leader>a", "<cmd>Telescope live_grep<cr>")
 -- M.map("n", "<Leader>f", "<cmd>Format<cr>")
 
 M.map("n", "H", "^")

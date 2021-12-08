@@ -185,6 +185,11 @@ _G.packer_plugins = {
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/switch.vim",
     url = "https://github.com/AndrewRadev/switch.vim"
   },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/telescope.nvim",
