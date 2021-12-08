@@ -66,7 +66,7 @@ M.map("v", "K", "5k")
 M.map("v", "gJ", ":join<cr>")
 M.map("n", ";", ":", {nowait = true, silent = false})
 M.map("n", "<Space>", "za")
-M.map("n", "<Space>", "za")
+M.map("v", "<Space>", "za")
 M.map("n", "<Leader>,", "<cmd>bnext<cr>")
 M.map("n", "<Leader>.", "<cmd>bprevious<cr>")
 

@@ -16,9 +16,11 @@ local Option = {}
 Option.g = function(options)
     add_options(Type.GLOBAL_OPTION, options)
 end
+
 Option.w = function(options)
     add_options(Type.WINDOW_OPTION, options)
 end
+
 Option.b = function(options)
     add_options(Type.BUFFER_OPTION, options)
 end
@@ -52,19 +54,21 @@ Option.g {
     showmatch = false
 
 }
+
 Option.b {
     swapfile = false,
     shiftwidth = 4,
     indentexpr="nvim_treesitter#indent()"
 }
+
 Option.w {
     number = true,
     numberwidth = 1,
     signcolumn = "yes",
     spell = false,
     foldlevel = 99,
-    foldmethod = "syntax",
-    -- foldmethod = "expr",
+    foldmethod = "marker",
+    foldmarker = '{,}',
     foldexpr = "nvim_treesitter#foldexpr()",
     foldtext = "v:lua.foldText()",
     linebreak = true
@@ -77,5 +81,6 @@ Option.w {
 -- }
 
 vim.g.mapleader = ","
+vim.g.markdown_fold_override_foldtext = false
 
 return Option

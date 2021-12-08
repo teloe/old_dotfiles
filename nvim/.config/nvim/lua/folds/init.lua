@@ -1,4 +1,5 @@
 local M = {}
+
 local function bufwidth()
     local width = vim.fn.winwidth(0)
     local numwidth = 0
@@ -22,6 +23,7 @@ local function bufwidth()
     end
     return width - numwidth - foldwidth - signwidth
 end
+
 function foldText()
     local fs = vim.api.nvim_get_vvar("foldstart")
     local fe = vim.api.nvim_get_vvar("foldend")
@@ -31,6 +33,7 @@ function foldText()
     return line .. ' '.. string.rep(" ", fillcharcount)
 
 end
+
 --
 --
 -- " autocmd FileType vim setlocal fdc=1
