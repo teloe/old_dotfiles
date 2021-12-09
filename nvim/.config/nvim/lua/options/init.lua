@@ -52,7 +52,6 @@ Option.g {
     swapfile = false,
     splitbelow = true,
     showmatch = false
-
 }
 
 Option.b {

@@ -21,7 +21,6 @@ end
 M.map("n", "Q", "<nop>")
 M.map("n", "q", "<nop>")
 
-
 -- Quick save
 M.map("n", "<Leader>s", ":update<cr>")
 
@@ -85,7 +84,6 @@ M.map("n", "<Esc>", "<cmd>noh<cr>")
 -- M.map("t", "<Leader>,", "<c-\\><c-n>:bnext<cr>")
 -- M.map("t", "<Leader>.", "<c-\\><c-n>:bprevious<cr>")
 
-
 M.map("n", "<Leader>tm", "<cmd>TableModeToggle<cr>")
 M.map("n", "<Leader>u", "<cmd>PackerUpdate<cr>")
 
@@ -95,6 +93,5 @@ for i = 1, 9 do
 end
 
 vim.cmd("cnoreabbrev x Sayonara")
-
 
 return M
