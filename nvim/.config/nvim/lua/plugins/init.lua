@@ -41,10 +41,12 @@ return require("packer").startup(function(use)
     }
 
     use "akinsho/toggleterm.nvim"
-    use "romgrk/barbar.nvim"
+    -- use "romgrk/barbar.nvim"
+    use "akinsho/bufferline.nvim"
+    require("bufferline").setup{}
     use "nvim-lualine/lualine.nvim"
     use "windwp/nvim-autopairs"
-    require('nvim-autopairs').setup{}
+    require("nvim-autopairs").setup{}
 
     -- Icons
     use "kyazdani42/nvim-web-devicons"

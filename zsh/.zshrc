@@ -8,40 +8,48 @@ export ZSH="/Users/tom/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
-# ZSH_THEME="gitsome"
 
-SPACESHIP_CHAR_SYMBOL="> "
+# ZSH_THEME="spaceship"
+ZSH_THEME="typewritten"
+
+export TYPEWRITTEN_CURSOR="block"
+# export TYPEWRITTEN_PROMPT_LAYOUT="pure"
+export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+export TYPEWRITTEN_SYMBOL="->"
+export TYPEWRITTEN_DISABLE_RETURN_CODE=true
+export TYPEWRITTEN_COLOR_MAPPINGS="secondary:default"
+
+# SPACESHIP_CHAR_SYMBOL="> "
 # SPACESHIP_CHAR_SYMBOL="❯ "
 # SPACESHIP_GIT_SYMBOL="ᚠ "
-SPACESHIP_GIT_SYMBOL=" "
-SPACESHIP_CHAR_COLOR_SUCCESS=NONE
-SPACESHIP_DIR_COLOR=NONE
-SPACESHIP_DIR_TRUNC=2
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_BATTERY_SHOW=false
-SPACESHIP_NODE_SHOW=false
-SPACESHIP_EXEC_TIME_SHOW=false
+# SPACESHIP_GIT_SYMBOL=" "
+# SPACESHIP_CHAR_COLOR_SUCCESS=NONE
+# SPACESHIP_DIR_COLOR=NONE
+# SPACESHIP_DIR_TRUNC=2
+# SPACESHIP_PACKAGE_SHOW=false
+# SPACESHIP_BATTERY_SHOW=false
+# SPACESHIP_NODE_SHOW=false
+# SPACESHIP_EXEC_TIME_SHOW=false
 
-SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_PROMPT_ADD_NEWLINE=false
 # SPACESHIP_PROMPT_SEPARATE_LINE=true
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_TIME_COLOR=none
-SPACESHIP_HOST_SHOW=always
+# SPACESHIP_TIME_SHOW=true
+# SPACESHIP_TIME_COLOR=none
+# SPACESHIP_HOST_SHOW=always
 # SPACESHIP_GIT_PREFIX="--> "
 
-SPACESHIP_PROMPT_ORDER=(
-    dir
-    git
-    line_sep
-    char
-)
-SPACESHIP_RPROMPT_ORDER=(
+# SPACESHIP_PROMPT_ORDER=(
+#     dir
+#     git
+#     line_sep
+#     char
+# )
+# SPACESHIP_RPROMPT_ORDER=(
     # dir
     # git
     # host
     # time
-)
+# )
 
 # Aliases
 alias c="clear"
@@ -156,3 +164,7 @@ source $ZSH/oh-my-zsh.sh
   # prompt spaceship
   
 # macchina -c blue --no-box --no-ascii --no-separator --no-bar-delimiter --bar
+
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten
