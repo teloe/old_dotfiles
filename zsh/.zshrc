@@ -14,7 +14,8 @@ ZSH_THEME="typewritten"
 
 export TYPEWRITTEN_CURSOR="block"
 # export TYPEWRITTEN_PROMPT_LAYOUT="pure"
-export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+# export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+export TYPEWRITTEN_RELATIVE_PATH="off"
 export TYPEWRITTEN_SYMBOL="->"
 export TYPEWRITTEN_DISABLE_RETURN_CODE=true
 export TYPEWRITTEN_COLOR_MAPPINGS="secondary:default"
