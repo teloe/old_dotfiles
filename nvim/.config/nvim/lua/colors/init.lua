@@ -1,6 +1,7 @@
 local vim = vim
 
 vim.cmd("colorscheme distill")
+-- vim.cmd("colorscheme molokai")
 
 vim.cmd([[
     hi Normal      ctermbg=none guibg=none

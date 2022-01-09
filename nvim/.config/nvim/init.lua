@@ -12,6 +12,7 @@ require "lsp"
 
 require "telescope-config"
 require "treesitter-config"
+require "buffer"
 require "colors"
 require "folds"
 require "statusline"
