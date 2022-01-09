@@ -9,24 +9,24 @@ export ZSH="/Users/tom/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
-# ZSH_THEME="spaceship"
 ZSH_THEME="typewritten"
+# ZSH_THEME="spaceship"
 
 export TYPEWRITTEN_CURSOR="block"
-# export TYPEWRITTEN_PROMPT_LAYOUT="pure"
-# export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+export TYPEWRITTEN_PROMPT_LAYOUT="pure"
 export TYPEWRITTEN_RELATIVE_PATH="off"
-export TYPEWRITTEN_SYMBOL="->"
 export TYPEWRITTEN_DISABLE_RETURN_CODE=true
-export TYPEWRITTEN_COLOR_MAPPINGS="secondary:default"
+# export TYPEWRITTEN_SYMBOL="->"
+# export TYPEWRITTEN_COLOR_MAPPINGS="secondary:default"
 
 # SPACESHIP_CHAR_SYMBOL="> "
-# SPACESHIP_CHAR_SYMBOL="❯ "
+# SPACESHIP_CHAR_SYMBOL="-> "
 # SPACESHIP_GIT_SYMBOL="ᚠ "
 # SPACESHIP_GIT_SYMBOL=" "
 # SPACESHIP_CHAR_COLOR_SUCCESS=NONE
 # SPACESHIP_DIR_COLOR=NONE
-# SPACESHIP_DIR_TRUNC=2
+# SPACESHIP_DIR_TRUNC=1
+# SPACESHIP_DIR_TRUNC_REPO=false
 # SPACESHIP_PACKAGE_SHOW=false
 # SPACESHIP_BATTERY_SHOW=false
 # SPACESHIP_NODE_SHOW=false
@@ -160,10 +160,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-  # Set Spaceship ZSH as a prompt
-  # autoload -U promptinit; promptinit
-  # prompt spaceship
-  
+# Set Spaceship ZSH as a prompt
+# autoload -U promptinit; promptinit
+# prompt spaceship
+
 # macchina -c blue --no-box --no-ascii --no-separator --no-bar-delimiter --bar
 
 # Set typewritten ZSH as a prompt

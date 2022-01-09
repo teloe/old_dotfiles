@@ -1,7 +1,7 @@
 [user]
     name  = Tom Eloe
     email = tomeloe@gmail.com
-    
+
 [core]
     editor = "nvim"
 
