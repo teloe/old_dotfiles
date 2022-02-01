@@ -33,7 +33,7 @@ lualine.setup(
 {
     options = {
         -- theme = custom,
-        theme = "nord",
+        -- theme = "nord",
         component_separators = "|",
         section_separators = { left = "", right = "" },
         -- section_separators = { left = "", right = " " },
