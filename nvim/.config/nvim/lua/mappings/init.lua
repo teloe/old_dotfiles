@@ -21,6 +21,9 @@ end
 M.map("n", "Q", "<nop>")
 M.map("n", "q", "<nop>")
 
+-- End of line while in insert mode
+M.map("i", "<C-l>", "<C-o>A")
+
 -- Quick save
 M.map("n", "<Leader>s", ":update<cr>")
 

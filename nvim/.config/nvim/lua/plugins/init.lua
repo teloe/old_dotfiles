@@ -66,6 +66,7 @@ return require("packer").startup(function(use)
     -- Colors
     use "flazz/vim-colorschemes"
     use "habamax/vim-bronzage"
+    use "projekt0n/github-nvim-theme"
 
     -- Git
     use "tpope/vim-fugitive"

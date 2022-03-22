@@ -13,11 +13,12 @@ ZSH_THEME="typewritten"
 # ZSH_THEME="spaceship"
 
 export TYPEWRITTEN_CURSOR="block"
-export TYPEWRITTEN_PROMPT_LAYOUT="pure"
+export TYPEWRITTEN_PROMPT_LAYOUT="half_pure"
 export TYPEWRITTEN_RELATIVE_PATH="off"
 export TYPEWRITTEN_DISABLE_RETURN_CODE=true
-export TYPEWRITTEN_SYMBOL="->"
-# export TYPEWRITTEN_COLOR_MAPPINGS="secondary:default"
+# export TYPEWRITTEN_SYMBOL="->"
+export TYPEWRITTEN_SYMBOL=">"
+export TYPEWRITTEN_COLOR_MAPPINGS="secondary:default"
 
 # SPACESHIP_CHAR_SYMBOL="> "
 # SPACESHIP_CHAR_SYMBOL="-> "
