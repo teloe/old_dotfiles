@@ -1,6 +1,8 @@
 local vim = vim
 
-vim.cmd("colorscheme gruvbit")
+-- vim.cmd("colorscheme gruvbit")
+-- vim.cmd("colorscheme github_dimmed")
+vim.cmd("colorscheme apprentice")
 -- vim.cmd("colorscheme tumnus")
 
 vim.cmd([[

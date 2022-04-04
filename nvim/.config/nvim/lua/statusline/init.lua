@@ -44,7 +44,8 @@ lualine.setup(
             -- { 'mode', separator = { left = '' }, right_padding = 2 },
         },
         lualine_b = {
-            {"branch", icon = ""},
+            -- {"branch", icon = ""},
+            {"branch", icon = ""},
             {
                 "diff",
                 symbols = {

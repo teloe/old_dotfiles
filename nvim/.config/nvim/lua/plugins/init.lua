@@ -68,6 +68,9 @@ return require("packer").startup(function(use)
     use "habamax/vim-bronzage"
     use "projekt0n/github-nvim-theme"
 
+    use "rktjmp/lush.nvim"
+    use "adisen99/apprentice.nvim"
+
     -- Git
     use "tpope/vim-fugitive"
     use "lewis6991/gitsigns.nvim"
