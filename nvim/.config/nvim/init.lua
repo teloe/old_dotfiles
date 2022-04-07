@@ -9,6 +9,7 @@ require "plugins"
 require "options"
 require "mappings"
 require "lsp"
+require "formatting"
 
 require "telescope-config"
 require "treesitter-config"

@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["apprentice.nvim"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/apprentice.nvim",
+    url = "https://github.com/adisen99/apprentice.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -128,6 +133,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

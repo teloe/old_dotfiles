@@ -62,6 +62,8 @@ return require("packer").startup(function(use)
     -- vsnip
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
+    -- Formatting
+    use "jose-elias-alvarez/null-ls.nvim"
 
     -- Colors
     use "flazz/vim-colorschemes"
