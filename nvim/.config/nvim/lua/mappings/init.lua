@@ -40,7 +40,8 @@ M.map("n", "<Leader>h", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 M.map("n", "<Leader>c", "<cmd>lua require('telescope.builtin').colorscheme()<cr>")
 M.map("n", "<Leader>b", "<cmd>Telescope buffers<cr>")
 M.map("n", "<Leader>a", "<cmd>Telescope live_grep<cr>")
--- M.map("n", "<Leader>f", "<cmd>Format<cr>")
+
+M.map("n", "<Leader>f", "<cmd>Neoformat<cr>")
 
 M.map("n", "H", "^")
 M.map("n", "L", "g_")
