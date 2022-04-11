@@ -245,6 +245,23 @@ _G.packer_plugins = {
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-json"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-json",
+    url = "https://github.com/elzr/vim-json"
+  },
+  ["vim-jsx-pretty"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
+    url = "https://github.com/MaxMEllon/vim-jsx-pretty"
+  },
+  ["vim-markdown"] = {
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/opt/vim-markdown",
+    url = "https://github.com/tpope/vim-markdown"
+  },
   ["vim-repeat"] = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-repeat",
@@ -277,6 +294,18 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-colorizer.lua]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
+vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /Users/tom/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], true)
+vim.cmd [[source /Users/tom/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]]
+time([[Sourcing ftdetect script at: /Users/tom/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

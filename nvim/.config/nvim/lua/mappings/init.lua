@@ -30,9 +30,24 @@ M.map("n", "<Leader>s", ":update<cr>")
 -- Toggle nvim-tree
 M.map("n", "<Leader>n", ":NvimTreeToggle<cr>")
 
--- Bufferline
-M.map("n", "bn", ":BufferLineCycleNext<cr>")
-M.map("n", "bp", ":BufferLineCyclePrev<cr>")
+-- Barbar.nvim
+M.map("n", "bp", ":BufferPrevious<cr>")
+M.map("n", "bn", ":BufferNext<cr>")
+M.map("n", "b<", ":BufferMovePrevious<cr>")
+M.map("n", "b>", ":BufferMoveNext<cr>")
+M.map("n", "bc", ":BufferClose<cr>")
+M.map("n", "bh", ":BufferPick<cr>")
+M.map("n", "bd", ":BufferOrderByDirectory<cr>")
+M.map("n", "bl", ":BufferOrderByLanguage<cr>")
+M.map("n", "b1", ":BufferGoto 1<cr>")
+M.map("n", "b2", ":BufferGoto 2<cr>")
+M.map("n", "b3", ":BufferGoto 3<cr>")
+M.map("n", "b4", ":BufferGoto 4<cr>")
+M.map("n", "b5", ":BufferGoto 5<cr>")
+M.map("n", "b6", ":BufferGoto 6<cr>")
+M.map("n", "b7", ":BufferGoto 7<cr>")
+M.map("n", "b8", ":BufferGoto 8<cr>")
+M.map("n", "b9", ":BufferGoto 9<cr>")
 
 -- M.map("n", "<Leader>H", '<cmd>TSHighlightCapturesUnderCursor<cr>')
 M.map("n", "<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")

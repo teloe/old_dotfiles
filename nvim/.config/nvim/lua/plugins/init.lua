@@ -41,9 +41,9 @@ return require("packer").startup(function(use)
     }
 
     use "akinsho/toggleterm.nvim"
-    -- use "romgrk/barbar.nvim"
-    use "akinsho/bufferline.nvim"
-    require("bufferline").setup{}
+    use "romgrk/barbar.nvim"
+    -- use "akinsho/bufferline.nvim"
+    -- require("bufferline").setup{}
     use "nvim-lualine/lualine.nvim"
     use "windwp/nvim-autopairs"
     require("nvim-autopairs").setup{}
@@ -59,6 +59,9 @@ return require("packer").startup(function(use)
     use "hrsh7th/cmp-cmdline"
     use "hrsh7th/nvim-cmp"
     use "glepnir/lspsaga.nvim"
+
+    use "aca/emmet-ls"
+
     -- vsnip
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
@@ -98,6 +101,15 @@ return require("packer").startup(function(use)
         require "colorizer".setup()
       end
     }
+
+    -- JS
+    use "MaxMEllon/vim-jsx-pretty"
+    use "elzr/vim-json"
+    use "neoclide/vim-jsx-improve"
+
+    -- Markdown
+    use {"tpope/vim-markdown", ft = "markdown"}
+
 
     -- Automatically set up configuration after cloning packer.nvim
     if packer_bootstrap then

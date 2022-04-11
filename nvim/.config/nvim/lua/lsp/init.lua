@@ -1,6 +1,6 @@
 local vim = vim
 local lspconfig = require"lspconfig"
-local configs = require"lspconfig/configs"
+local configs = require"lspconfig.configs"
 local cmp = require"cmp"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -9,10 +9,10 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+    lspconfig[lsp].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
 end
 
 -- Set completeopt to have a better completion experience
@@ -79,37 +79,39 @@ cmp.setup {
     })
 }
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore)
--- cmp.setup.cmdline("/", {
---     sources = {
---         { name = "buffer" }
---     }
--- })
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore)
--- cmp.setup.cmdline(":", {
---     sources = cmp.config.sources({
---         { name = "path" }
---     }, {
---         { name = "cmdline" }
---     })
--- })
-
-configs.emmet_ls = {
-    default_config = {
-        cmd = {"emmet-ls", "--stdio"},
-        filetypes = {"html", "css"},
-        root_dir = function()
-            return vim.loop.cwd()
-        end,
-        settings = {}
+if not configs.ls_emmet then
+    configs.ls_emmet = {
+        default_config = {
+            cmd = { 'ls_emmet', '--stdio' };
+            filetypes = {
+                'html',
+                'css',
+                'scss',
+                'javascript',
+                'javascriptreact',
+                'typescript',
+                'typescriptreact',
+                'haml',
+                'xml',
+                'xsl',
+                'pug',
+                'slim',
+                'sass',
+                'stylus',
+                'less',
+                'sss',
+                'hbs',
+                'handlebars',
+            };
+            root_dir = function(fname)
+                return vim.loop.cwd()
+            end;
+            settings = {};
+        };
     }
-}
+end
 
-lspconfig.emmet_ls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-}
+lspconfig.ls_emmet.setup { capabilities = capabilities }
 
 lspconfig.tsserver.setup {
     filetypes = {
@@ -125,17 +127,17 @@ lspconfig.tsserver.setup {
 }
 
 local vs_code_extracted = {
-  html = "vscode-html-language-server",
-  cssls = "vscode-css-language-server",
-  vimls = "vim-language-server"
+    html = "vscode-html-language-server",
+    cssls = "vscode-css-language-server",
+    vimls = "vim-language-server"
 }
 
 for ls, cmd in pairs(vs_code_extracted) do
-  lspconfig[ls].setup {
-    cmd = {cmd, "--stdio"},
-    on_attach = on_attach,
-    capabilities = capabilities
-  }
+    lspconfig[ls].setup {
+        cmd = {cmd, "--stdio"},
+        on_attach = on_attach,
+        capabilities = capabilities
+    }
 end
 
 lspconfig.jsonls.setup {
