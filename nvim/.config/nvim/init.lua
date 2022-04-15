@@ -13,7 +13,7 @@ require "formatting"
 
 require "telescope-config"
 require "treesitter-config"
-require "buffer"
+-- require "buffer"
 require "colors"
 require "folds"
 require "statusline"

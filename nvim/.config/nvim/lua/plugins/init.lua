@@ -42,6 +42,7 @@ return require("packer").startup(function(use)
 
     use "akinsho/toggleterm.nvim"
     use "romgrk/barbar.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
     -- use "akinsho/bufferline.nvim"
     -- require("bufferline").setup{}
     use "nvim-lualine/lualine.nvim"
@@ -92,6 +93,7 @@ return require("packer").startup(function(use)
     -- HTML
     use "othree/html5.vim"
     use "mattn/emmet-vim"
+    use "nelsyeung/twig.vim"
 
     -- CSS
     use "hail2u/vim-css3-syntax"
