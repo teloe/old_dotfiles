@@ -2,7 +2,7 @@
 
 My configuration files.
 
-iterm2, zsh, neovim, tmux, git.
+kitty, zsh, neovim, tmux, git.
 
 Includes recently transitioned neovim configuration from init.vim to init.lua.
 
