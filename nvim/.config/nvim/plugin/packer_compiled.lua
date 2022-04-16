@@ -74,10 +74,10 @@ _G.packer_plugins = {
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/apprentice.nvim",
     url = "https://github.com/adisen99/apprentice.nvim"
   },
-  ["bufferline.nvim"] = {
+  ["barbar.nvim"] = {
     loaded = true,
-    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["emmet-ls"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/emmet-ls",
+    url = "https://github.com/aca/emmet-ls"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/emmet-vim",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/html5.vim",
     url = "https://github.com/othree/html5.vim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
@@ -220,6 +230,11 @@ _G.packer_plugins = {
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["twig.vim"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/twig.vim",
+    url = "https://github.com/nelsyeung/twig.vim"
+  },
   ["vim-bronzage"] = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-bronzage",
@@ -250,10 +265,20 @@ _G.packer_plugins = {
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-json",
     url = "https://github.com/elzr/vim-json"
   },
+  ["vim-jsx-improve"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-jsx-improve",
+    url = "https://github.com/neoclide/vim-jsx-improve"
+  },
   ["vim-jsx-pretty"] = {
     loaded = true,
     path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
     url = "https://github.com/MaxMEllon/vim-jsx-pretty"
+  },
+  ["vim-kitty"] = {
+    loaded = true,
+    path = "/Users/tom/.local/share/nvim/site/pack/packer/start/vim-kitty",
+    url = "https://github.com/fladson/vim-kitty"
   },
   ["vim-markdown"] = {
     loaded = false,

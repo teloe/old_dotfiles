@@ -40,11 +40,10 @@ return require("packer").startup(function(use)
         run = ":TSUpdate"
     }
 
+    use "fladson/vim-kitty"
     use "akinsho/toggleterm.nvim"
     use "romgrk/barbar.nvim"
     use "lukas-reineke/indent-blankline.nvim"
-    -- use "akinsho/bufferline.nvim"
-    -- require("bufferline").setup{}
     use "nvim-lualine/lualine.nvim"
     use "windwp/nvim-autopairs"
     require("nvim-autopairs").setup{}
