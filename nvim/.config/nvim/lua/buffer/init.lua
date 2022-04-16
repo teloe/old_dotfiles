@@ -1,8 +1,0 @@
--- local bufferline = require("bufferline")
---
--- bufferline.setup {
---     options = {
---         numbers = "ordinal",
---         separator_style = "thin",
---     }
--- }
